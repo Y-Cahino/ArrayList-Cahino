@@ -26,12 +26,18 @@ namespace ArrayList_Cahino
         {
             return list.Contains(id);
         }
-        public void EstraiPrimo(int id)
+        public int EstraiPrimo(int id)
         {
             if(!IsEmpty())
             {
-                int primo=
+                //Ottiene primo elemento
+                int primo = (int)list[0];
+                //Lo rimuove dalla coda
+                list.RemoveAt(0);
+                return primo;
             }
+            else
+                throw new InvalidCastException("La Coda Prioritaria è vuota");
         }
         //Verifica se è vuota
         public bool IsEmpty()
