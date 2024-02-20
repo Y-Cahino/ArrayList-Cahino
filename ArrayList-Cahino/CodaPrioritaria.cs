@@ -15,11 +15,12 @@ namespace ArrayList_Cahino
         {
             list= new ArrayList();
         }
-        public void Add(int id)
+        public void Insert(int id)
         {
-            //Aggiunge l'elemento e riordina
-            list.Add(id);
-            list.Sort();
+           //Trova l'indice in cui inserire l'elemento mantenendo l'ordinamento
+           int i=list.BinarySearch(id);
+            if (i < 0) i = ~i; //inverte tutti i bit dell'intero, restituisce complemento a 1 di i- se non trova nulla
+            list.Insert(i, list); //inserisce nella posizione corretta
         }
         //Cerca elemento nella coda prioritaria
         public bool Search(int id)
@@ -44,6 +45,10 @@ namespace ArrayList_Cahino
         {
             //True se è vuota
             return list.Count == 0;
+        }
+        public int EstraiUltimo(int id)
+        {
+            int ultimo = (int)list[]
         }
     }
 }
